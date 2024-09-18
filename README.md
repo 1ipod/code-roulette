@@ -1,2 +1,2 @@
 # code-roulette
-Complete insane contracts with friends
+Complete insane contracts using spagetti code with friends

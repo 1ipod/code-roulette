@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang=en>
+  <head>
+    <meta charset=utf-8>
+    <title>veb websocket example</title>
+	<link rel="stylesheet" type="text/css" href="/assets/style.css">
+  <script type="text/javascript" src="/assets/htmx.min.js"></script>
+  <script type="text/javascript" src="/assets/ws.js"></script>
+  </head>
+  <body>
+    <p>This is an example of using V's `veb` and `net.websocket` modules in 
+	the same app, where the websocket connection happens on the /ws route of
+	your veb app.</p>
+    <div hx-ext="ws" ws-connect="./../chat" hx-target="chat">
+      <ul hx-swap-oob="beforeend" id="chat">
+        Welcome to CodeRoulette, here you'll see messages from the other players and emails from NPCs.
+      </ul>
+      <form ws-send id="message-input">
+        <input type="text" hidden="true" value=@user name="name"></input>
+        <input type="text" name="message-input" placeholder="Enter your message here" value=""/>
+        <input type="submit"/>
+      </form>
+    </div>
+  </body>
+</html>
