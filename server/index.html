@@ -8,10 +8,10 @@
   <script type="text/javascript" src="/assets/ws.js"></script>
   </head>
   <body>
-    <p>This is an example of using V's `veb` and `net.websocket` modules in 
-	the same app, where the websocket connection happens on the /ws route of
-	your veb app.</p>
-    <div hx-ext="ws" ws-connect="./../chat" hx-target="chat">
+    <table>
+      <tr>
+        <td>
+      <div hx-ext="ws" ws-connect="./../chat" hx-target="chat">
       <ul hx-swap-oob="beforeend" id="chat">
         Welcome to CodeRoulette, here you'll see messages from the other players and emails from NPCs.
       </ul>
@@ -21,5 +21,13 @@
         <input type="submit"/>
       </form>
     </div>
+  </td>
+  <td>
+    <div hx-ext="ws" ws-connect="./shell" hx-target="term">
+      <ul id="term" hx-swap-oob="beforeend"></ul>
+    </div>
+  </td>
+    </tr>
+    </table>
   </body>
 </html>
