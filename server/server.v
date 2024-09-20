@@ -13,7 +13,7 @@ import json
 const app_port = 8990
 
 const path = "/usr/bin/echo"
-const args = ["echo"]
+const args = ["echo", "agojisgodjpaspdgajsdgopiasjdgjoiasjdiogaosidgjasjopigjdojsaoipdgpjioasiodgjoiasdjgioapsdgjiopasopdjigijopasdjgooaipsdigjoasijodgjiopasjdgioasdjigoaijosdgjiasijdogjiasdiopgjpaiosdgjioasoijdgjopiasjdoipgjiopasdjgioaojispdgjpioasdpijogijopasdjiogjioasdjiopgdsjiopsadjiogjioasgojidgjaisdojipgjasdiopgjoiasoijpdgjiopasdijopgjioasdijgaspiogijsapijogioasdjp"]
 
 fn main() {
 	mut x := map[string]Session
@@ -187,6 +187,9 @@ fn new_chat_server() !&websocket.Server {
 }
 
 fn new_term_session(io ProcIo) !&websocket.Server {
+	if !io.alive(){
+		panic("drunkeness")
+	}
 	mut logger := &log.Log{}
 	logger.set_level(.error)
 	mut wss := websocket.new_server(.ip, app_port, '', logger: logger)
