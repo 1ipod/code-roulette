@@ -1,0 +1,3 @@
+server/server
+server/assets/htmx.min.js
+server/assets/ws.js
